@@ -1,10 +1,10 @@
 
 NAME	= libcident.a
-SRC_DIR	= .
+SRC_DIR	= src
 SRCS	= $(shell find $(SRC_DIR) -name "cident*.c" -o -name "__wrap*.c")
 OBJS	= $(SRCS:.c=.o)
 DEPS	= $(OBJS:.o=.d)
-CFLAGS += -Wall -Werror -Wextra -MMD -MP
+CFLAGS += -Wall -Werror -Wextra -MMD -MP -I.
 
 all: $(NAME)
 
