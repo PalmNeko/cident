@@ -12,7 +12,7 @@ TEST(wrap_open, basic)
 	cident_set_error(1);
 	fd = open("resource/for_wrap_read.txt", O_RDONLY);
 	EXPECT_EQ(fd, -1);
-	cident_set_error(2);
+	cident_set_error(3);
 	fd = open("resource/for_wrap_read.txt", O_RDONLY);
 	EXPECT_NE(fd, -1);
 	close(fd);
