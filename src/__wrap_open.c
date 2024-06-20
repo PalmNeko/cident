@@ -26,7 +26,7 @@ int	__wrap_open(const char *path, int oflag, ...)
     	mode = va_arg (arg, int);
     	va_end (arg);
 		fd = __real_open(path, oflag, mode);
-		cident_printf_debug("open: fd: %d path: %s oflag: %d mode: %d",
+		cident_printf_debug("open: fd: %d path: %s oflag: %d mode: %d\n",
 			fd, path, oflag, mode);
     }
 	else
