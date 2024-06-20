@@ -32,7 +32,7 @@ int	__wrap_open(const char *path, int oflag, ...)
 	else
 	{
 		fd = __real_open(path, oflag);
-		cident_printf_debug("open: fd: %d path: %s oflag: %d",
+		cident_printf_debug("open: fd: %d path: %s oflag: %d\n",
 			fd, path, oflag);
 	}
 	cident_int_next_open_error();
