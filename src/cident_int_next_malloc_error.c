@@ -1,5 +1,6 @@
 
 #include "cident_int.h"
+#include "cident.h"
 
 extern int	g_cident_malloc_error;
 

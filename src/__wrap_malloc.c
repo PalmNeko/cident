@@ -3,6 +3,7 @@
 #include <stdbool.h>
 #include <errno.h>
 #include "cident_int.h"
+#include "cident.h"
 
 void	*__real_malloc(size_t size);
 
