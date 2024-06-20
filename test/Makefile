@@ -6,7 +6,7 @@ SRCS		= $(shell find $(SRC_DIR) -name "*.c")
 OBJS		= $(SRCS:.c=.o)
 DEPS		= $(OBJS:.o=.d)
 CFLAGS		= -Wall -Werror -Wextra -MMD -MP -I.. -Ityctest
-LDFLAGS 	= -Ltyctest -L.. -Wl,--wrap=malloc -Wl,--wrap=read,--wrap=open
+LDFLAGS 	= -Ltyctest -L.. -Wl,--wrap=malloc -Wl,--wrap=read,--wrap=open,--wrap=close
 LDLIBS		= -ltyctest -ltyctest_main -lcident
 
 LIBCIDEN	= cident
