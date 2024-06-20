@@ -13,13 +13,12 @@ void	*__wrap_malloc(size_t size)
 
 	if (cident_int_should_raise_malloc_error())
 	{
-		cident_int_next_malloc_error();
 		errno = ENOMEM;
-		return (NULL);
+		ptr = NULL;
 	}
-	ptr = __real_malloc(size);
-	if (ptr == NULL)
-		return (NULL);
+	else
+		ptr = __real_malloc(size);
+	cident_int_next_malloc_error();
 	cident_printf_debug("malloc: %p\n", ptr);
 	return (ptr);
 }
