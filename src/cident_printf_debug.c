@@ -2,7 +2,7 @@
 #include <stdarg.h>
 #include "cident_int.h"
 
-int	cident_int_printf_debug(const char *format, ...)
+int	cident_printf_debug(const char *format, ...)
 {
 	va_list	ap;
 	int		print_cnt;

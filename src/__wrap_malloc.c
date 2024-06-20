@@ -19,6 +19,6 @@ void	*__wrap_malloc(size_t size)
 	ptr = __real_malloc(size);
 	if (ptr == NULL)
 		return (NULL);
-	cident_int_printf_debug("malloc: %p\n", ptr);
+	cident_printf_debug("malloc: %p\n", ptr);
 	return (ptr);
 }
