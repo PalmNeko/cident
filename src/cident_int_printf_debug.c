@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <stdarg.h>
-#include "ciden_int.h"
+#include "cident_int.h"
 
-int	ciden_int_printf_debug(const char *format, ...)
+int	cident_int_printf_debug(const char *format, ...)
 {
 	va_list	ap;
 	int		print_cnt;
 
-	if (ciden_int_get_debug_mode() == false)
+	if (cident_int_get_debug_mode() == false)
 		return (0);
 	va_start(ap, format);
 	print_cnt = vfprintf(stderr, format, ap);
