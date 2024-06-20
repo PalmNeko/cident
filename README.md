@@ -9,7 +9,7 @@
 ## Download and Compile
  If you can installed `git`, can use bellow script.
 ```
-bash -c $(curl https://raw.githubusercontent.com/PalmNeko/cident/main/install.sh)
+bash -c "$(curl https://raw.githubusercontent.com/PalmNeko/cident/main/install.sh)"
 ```
 This script compile this project and create `libcident.a`.
 
