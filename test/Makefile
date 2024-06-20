@@ -5,12 +5,12 @@ SRC_DIR		= src
 SRCS		= $(shell find $(SRC_DIR) -name "*.c")
 OBJS		= $(SRCS:.c=.o)
 DEPS		= $(OBJS:.o=.d)
-CFLAGS		= -Wall -Werror -Wextra -MMD -MP -I../src -Iincludes/tyctest
-LDLIBS		= -Llibs -L../src -ltyctest_main -ltyctest -lcident
-LDFLAGS 	= -Wl,--wrap=malloc -Wl,--wrap=read
+CFLAGS		= -Wall -Werror -Wextra -MMD -MP -I../src -Ityctest
+LDFLAGS 	= -Ltyctest -L../src -Wl,--wrap=malloc -Wl,--wrap=read
+LDLIBS		= -ltyctest -ltyctest_main -lcident
 
 LIBCIDEN	= cident
-LIBTYCTEST	= libs/libtyctest_main.a
+LIBTYCTEST	= tyctest
 
 all: $(NAME)
 
@@ -21,10 +21,6 @@ clean:
 fclean: clean
 	$(RM) $(NAME)
 	make -C ../src fclean
-
-uninstall:
-	rm -rf includes libs bin
-	rm -rf cident
 
 re: fclean all
 

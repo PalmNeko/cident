@@ -12,13 +12,13 @@ ssize_t	__wrap_read(int fildes, void *buf, size_t nbyte)
 
 	if (cident_int_should_raise_read_error())
 	{
-		cident_int_next_read_error();
 		errno = EIO;
 		result = -1;
 	}
 	else {
 		result = __real_read(fildes, buf, nbyte);
 	}
+	cident_int_next_read_error();
 	cident_printf_debug("read: ret: %zd fd: %d buf: %p byte: %zd\n",
 			result, fildes, buf, nbyte);
 	return (result);
