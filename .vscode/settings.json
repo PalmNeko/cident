@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "cident.h": "c",
+        "cident_int.h": "c"
+    }
+}
